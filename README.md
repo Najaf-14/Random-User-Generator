@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+# Random User Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and interactive React application that fetches and displays random user profiles from the [RandomUser.me](https://randomuser.me) API. Users can view details such as the profile photo, name, phone number, gender, and location, and easily switch to another random user with the click of a button.
+
+## Features
+
+- Fetches real-time random user data from the RandomUser.me API.
+- Displays user information in a clean, responsive Bootstrap card.
+- Includes a **Change User** button to dynamically load a new random profile.
+- Built with functional React components and modern hooks (`useState`, `useEffect`).
+- Responsive and centered layout.
+
+## Tech Stack
+
+- [React](https://react.dev/) (v19)
+- [React Bootstrap](https://react-bootstrap.github.io/) (v2.10)
+- [Bootstrap](https://getbootstrap.com/) (v5.3)
+- [Create React App](https://create-react-app.dev/)
+- [RandomUser.me API](https://randomuser.me/)
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Node.js](https://nodejs.org/) (>= 14 recommended)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd random-user-gen
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+4. Open your browser and navigate to:
+
+   ```
+   http://localhost:3000
+   ```
+
+## Project Structure
+
+```
+random-user-gen/
+├── public/                  # Static assets
+├── src/
+│   ├── api/
+│   │   └── getData.js       # API utility to fetch random user data
+│   ├── Component/
+│   │   └── Card.jsx         # UserCard component (Bootstrap card UI)
+│   ├── App.js               # Main application component
+│   ├── index.js             # Application entry point
+│   └── ...                  # Other boilerplate files
+├── package.json
+└── README.md
+```
+
+## API Reference
+
+This application uses the **[RandomUser.me](https://randomuser.me)** API.
+
+- **Endpoint:** `https://randomuser.me/api/`
+- **Method:** `GET`
+- **Returns:** A JSON object containing an array of random user results.
+
+Example response fields used in this app:
+
+| Field | Description |
+|-------|-------------|
+| `picture.large` | User's profile image |
+| `name.first` | User's first name |
+| `cell` | User's phone number |
+| `gender` | User's gender |
+| `location.city` | User's city |
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+| Script | Description |
+|--------|-------------|
+| `npm start` | Runs the app in development mode at [http://localhost:3000](http://localhost:3000). |
+| `npm test` | Launches the test runner in interactive watch mode. |
+| `npm run build` | Builds the app for production to the `build` folder. |
+| `npm run eject` | Ejects the app from Create React App (one-way operation). |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## License
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project is open-source and available under the [MIT License](LICENSE).
 
-### `npm test`
+## Author
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Created by **[Your Name]**.
 
-### `npm run build`
+Feel free to contribute, raise issues, or suggest improvements!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
