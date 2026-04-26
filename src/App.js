@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import UserCard from './Component/Card';
+import { use, useEffect, useState, useTransition } from 'react';
+import getData from './api/getData';
 
 function App() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getData().then((user) => setData(user.results[0]))
+  }, [])
+
+  const changeUser = () => {
+    getData().then((user) => setData(user.results[0]))
+    }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{display: 'flex', justifyContent:'center'}}>
+      {data && <UserCard data={data} changeUser={changeUser} />}
     </div>
   );
 }
