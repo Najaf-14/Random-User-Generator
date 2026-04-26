@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import UserCard from './Component/Card';
 import { use, useEffect, useState, useTransition } from 'react';
 import getData from './api/getData';
